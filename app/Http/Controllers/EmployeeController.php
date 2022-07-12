@@ -20,7 +20,12 @@ class EmployeeController extends Controller
     
     public function insertdata(Request $request){
         # dd($request->all());
-        Employee::create($request->all());
+        $data = Employee::create($request->all());
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('../fotopegawai/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            $data->save();
+        }
         return redirect()->route('pegawai')->with('success', 'Data berhasil ditambahkan.');
     }
 
@@ -28,7 +33,6 @@ class EmployeeController extends Controller
         
         $data = Employee::find($id);
         # dd($data);
-        
         return view('tampildata', compact('data'));
     }
 

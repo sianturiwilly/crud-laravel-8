@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2022 at 09:05 AM
+-- Generation Time: Jul 12, 2022 at 09:34 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -42,7 +42,6 @@ CREATE TABLE `employees` (
 
 INSERT INTO `employees` (`id`, `nama`, `jeniskelamin`, `notelepon`, `created_at`, `updated_at`) VALUES
 (1, 'Willi Sianturi', 'pria', 85889894818, '2022-07-11 03:41:42', '2022-07-12 03:41:56'),
-(2, 'Wayne Rooney', 'pria', 85823341993, '2022-07-11 20:29:15', '2022-07-11 20:29:15'),
 (3, 'Darwis Purba', 'pria', 87867732901, '2022-07-11 20:31:53', '2022-07-11 20:31:53'),
 (4, 'Nike Ardilla', 'wanita', 81590952570, '2022-07-11 20:46:14', '2022-07-11 20:46:14'),
 (5, 'Daniel', 'pria', 81390934503, '2022-07-11 20:52:59', '2022-07-12 00:05:07');

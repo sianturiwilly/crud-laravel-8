@@ -14,8 +14,13 @@
     <h1 class="text-center mb-4">Data Pegawai</h1>
 
         <div class="container">
-            <button type="button" class="btn btn-success">Tambah +</button>
+            <a href="/tambahpegawai" class="btn btn-success">Tambah +</a>
             <div class="row">
+              @if ($message = Session::get('success'))
+                  <div class="alert alert-success" role="alert">
+                      {{ $message }}
+                  </div>
+              @endif
                 <table class="table">
                     <thead>
                       <tr>
@@ -23,16 +28,19 @@
                         <th scope="col">Nama</th>
                         <th scope="col">Jenis Kelamin</th>
                         <th scope="col">No Telepon</th>
+                        <th scope="col">Dibuat</th>
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
+
                     @foreach ($data as $row)
                         <tr>
                             <th scope="row">{{ $row->id }}</th>
                             <td>{{ $row->nama }}</td>
                             <td>{{ $row->jeniskelamin }}</td>
                             <td>{{ $row->notelepon }}</td>
+                            <td>{{ $row->created_at->format('D M Y') }}</td>
                             <td>
                                 <button type="button" class="btn btn-danger">Hapus</button>
                                 <button type="button" class="btn btn-info">Edit</button>

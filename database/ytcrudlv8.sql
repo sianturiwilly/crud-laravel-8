@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2022 at 09:34 AM
+-- Generation Time: Jul 13, 2022 at 09:38 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -32,6 +32,7 @@ CREATE TABLE `employees` (
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jeniskelamin` enum('pria','wanita') COLLATE utf8mb4_unicode_ci NOT NULL,
   `notelepon` bigint(20) NOT NULL,
+  `foto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -40,11 +41,12 @@ CREATE TABLE `employees` (
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`id`, `nama`, `jeniskelamin`, `notelepon`, `created_at`, `updated_at`) VALUES
-(1, 'Willi Sianturi', 'pria', 85889894818, '2022-07-11 03:41:42', '2022-07-12 03:41:56'),
-(3, 'Darwis Purba', 'pria', 87867732901, '2022-07-11 20:31:53', '2022-07-11 20:31:53'),
-(4, 'Nike Ardilla', 'wanita', 81590952570, '2022-07-11 20:46:14', '2022-07-11 20:46:14'),
-(5, 'Daniel', 'pria', 81390934503, '2022-07-11 20:52:59', '2022-07-12 00:05:07');
+INSERT INTO `employees` (`id`, `nama`, `jeniskelamin`, `notelepon`, `foto`, `created_at`, `updated_at`) VALUES
+(1, 'Willi Sianturi', 'pria', 85889004822, 'willi.jpg', '2022-07-12 01:52:55', '2022-07-12 01:52:57'),
+(2, 'Darwis Purba', 'pria', 81320093455, 'gettyimages-1323210213-2048x2048.jpg', '2022-07-12 02:03:57', '2022-07-12 02:03:58'),
+(4, 'Nike Ardilla', 'wanita', 81530441995, '223231488_211070671024384_6614654802945804628_n.jpg', '2022-07-13 00:30:49', '2022-07-13 00:30:50'),
+(5, 'David Beckham', 'pria', 85790012994, 'o-DAVID-BECKHAM-HM-900.jpg', '2022-07-13 00:32:41', '2022-07-13 00:32:41'),
+(6, 'Frank Lampard', 'pria', 81590223944, 'LAMPARD-Frank-060625-28.jpg', '2022-07-13 00:33:21', '2022-07-13 00:33:21');
 
 -- --------------------------------------------------------
 
@@ -184,7 +186,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

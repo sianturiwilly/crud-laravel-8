@@ -37,9 +37,9 @@
                     @php
                       $no = 1;
                     @endphp
-                    @foreach ($data as $row)
+                    @foreach ($data as $index => $row)
                         <tr>
-                            <th scope="row">{{ $no++ }}</th>
+                            <th scope="row">{{ $index + $data->firstItem() }}</th>
                             <td>{{ $row->nama }}</td>
                             <td>
                               <img src="{{ asset('fotopegawai/'.$row->foto) }}" alt="" style="width: 40px;">
@@ -56,6 +56,7 @@
                       
                     </tbody>
                   </table>
+                  {{ $data->links() }}
             </div>
         </div>
 

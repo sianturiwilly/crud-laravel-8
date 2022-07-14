@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2022 at 09:38 AM
+-- Generation Time: Jul 14, 2022 at 05:50 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -46,7 +46,11 @@ INSERT INTO `employees` (`id`, `nama`, `jeniskelamin`, `notelepon`, `foto`, `cre
 (2, 'Darwis Purba', 'pria', 81320093455, 'gettyimages-1323210213-2048x2048.jpg', '2022-07-12 02:03:57', '2022-07-12 02:03:58'),
 (4, 'Nike Ardilla', 'wanita', 81530441995, '223231488_211070671024384_6614654802945804628_n.jpg', '2022-07-13 00:30:49', '2022-07-13 00:30:50'),
 (5, 'David Beckham', 'pria', 85790012994, 'o-DAVID-BECKHAM-HM-900.jpg', '2022-07-13 00:32:41', '2022-07-13 00:32:41'),
-(6, 'Frank Lampard', 'pria', 81590223944, 'LAMPARD-Frank-060625-28.jpg', '2022-07-13 00:33:21', '2022-07-13 00:33:21');
+(6, 'Frank Lampard', 'pria', 81590223944, 'LAMPARD-Frank-060625-28.jpg', '2022-07-13 00:33:21', '2022-07-13 00:33:21'),
+(7, 'Rooney', 'pria', 81590902885, 'gettyimages-450315450-2048x2048.jpg', '2022-07-13 20:26:47', '2022-07-13 20:26:47'),
+(9, 'Cinta Laura', 'wanita', 81390901993, '291818570_5534047326686607_4617172831964477416_n.jpg', '2022-07-13 20:40:53', '2022-07-13 20:40:53'),
+(10, 'CR7', 'pria', 87890920334, 'gettyimages-1323210213-2048x2048.jpg', '2022-07-13 20:46:27', '2022-07-13 20:46:27'),
+(11, 'Matthew Bellamy', 'pria', 85723334600, 'bellamy1.jpg', '2022-07-13 20:47:42', '2022-07-13 20:47:42');
 
 -- --------------------------------------------------------
 
@@ -186,7 +190,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

@@ -7,7 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>CRUD LARAVEL 8</title>
   </head>
   <body>
@@ -16,11 +17,11 @@
         <div class="container">
             <a href="/tambahpegawai" class="btn btn-success">Tambah +</a>
             <div class="row">
-              @if ($message = Session::get('success'))
-                  <div class="alert alert-success" role="alert">
-                      {{ $message }}
-                  </div>
-              @endif
+            {{-- @if($message = Session::get('success'))
+            <div class="alert alert-success" role="alert">
+                {{ $message }}
+            </div>
+            @endif --}}
                 <table class="table">
                     <thead>
                       <tr>
@@ -95,4 +96,9 @@
     });
 </script>
 
+<script>
+  @if (Session::has('success'))
+      toastr.success("{{ Session::get('success') }}")
+  @endif
+  </script>
 </html>

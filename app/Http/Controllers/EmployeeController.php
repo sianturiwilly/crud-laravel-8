@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
-        $data = Employee::paginate(5);
-        # $data = Employee::all();
-        # dd($data);
+        if($request->has('search')){
+            $data = Employee::where('nama','LIKE','%' .$request->search.'%')->paginate(5);
+            // Session::put('halaman_url', request()->fullUrl());
+        } else {
+            $data = Employee::paginate(5);
+            // Session::put('halaman_url', request()->fullUrl());
+        }
+
         return view('datapegawai', compact('data'));
     }
 

@@ -26,6 +26,7 @@ class LoginController extends Controller
     }
 
     public function registeruser(Request $request){
+        // dd($request->all());
         User::create([
             'name' => $request->name,
             'email' => $request->email,

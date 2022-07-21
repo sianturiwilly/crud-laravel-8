@@ -1,12 +1,5 @@
 @extends('layout.admin')
 
-@push('css')
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-@endpush
-
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -14,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Pegawai</h1>
+            <h1 class="m-0">Dashboard v2</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Data Pegawai</li>
+              <li class="breadcrumb-item active">Dashboard v2</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -28,7 +21,7 @@
 
     <div class="container">
         <a href="/tambahpegawai" class="btn btn-success">Tambah +</a>
-        <!-- {{ Session::get('halaman_url') }} -->
+
         <div class="row g-3 align-items-center mt-2">
             <div class="col-auto">
             <form action="/pegawai" method="GET">
@@ -86,15 +79,13 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Jenis Kelamin</th>
-                        <th scope="col">No. Telepon</th>
-                        <th scope="col">Tanggal Lahir</th>
-                        <th scope="col">Agama</th>
-                        <th scope="col">Dibuat</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Foto</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">No. Telepon</th>
+                            <th scope="col">Dibuat</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
                 </thead>
                 <tbody>
                 @php
@@ -109,8 +100,6 @@
                         </td>
                         <td>{{ $row->jeniskelamin }}</td>
                         <td>{{ $row->notelepon }}</td>
-                        <td>{{ $row->tanggal_lahir }}</td>
-                        <td>{{ $row->id_religions }}</td>
                         <td>{{ $row->created_at->format('D M Y') }}</td>
                         <td>
                             <a href="/tampilkandata/{{ $row->id }}" class="btn btn-info">Edit</a>
@@ -124,9 +113,6 @@
         </div>
     </div>
 </div>
-@endsection
-
-@push('scripts')
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -169,4 +155,4 @@
         toastr.success("{{ Session::get('success') }}")
     @endif
     </script>
-@endpush
+@endsection
